@@ -29,3 +29,10 @@ jobs:
       - name: Run test suite
         run: |
           python -m pytest test/ -v
+
+      - name: Run test suite with coverage
+        run: |
+          python -m pytest test/ -v \
+            --cov=. \
+            --cov-report=term-missing \
+            --cov-config=.coveragerc
